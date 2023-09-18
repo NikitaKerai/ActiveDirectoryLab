@@ -7,12 +7,12 @@ Active Directory Home Lab Environment consists of using Oracle Virtual Box. Conf
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>PowerShell</b> 
-- <b>Oracle Virtual Box</b>
+- PowerShell 
+- Oracle Virtual Box
 
 <h2>Environments Used </h2>
 
-- <b>Windows 10</b> (21H2)
+- Windows 10 (21H2)
 
 <h2>Program walk-through:</h2>
 
