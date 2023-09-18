@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Rule {
+    private String sourceIP;
+    private String destinationIP;
+    private int sourcePort;
+    private int destinationPort;
+    private String action; // "ALLOW" or "DENY"
+
+    public Rule(String sourceIP, String destinationIP, int sourcePort, int destinationPort, String action) {
+        this.sourceIP = sourceIP;
+        this.destinationIP = destinationIP;
+        this.sourcePort = sourcePort;
+        this.destinationPort = destinationPort;
+        this.action = action;
+    }
+
+    public boolean matches(String sourceIP, String destinationIP, int sourcePort, int destinationPort) {
+        return this.sourceIP.equals(sourceIP) &&
+               this.destinationIP.equals(destinationIP) &&
+               this.sourcePort == sourcePort &&
+               this.destinationPort == destinationPort;
+    }
+
+    public String getAction() {
+        return action;
+    }
+}
+
+public class Firewall {
+    private List<Rule> rules;
+
+    public Firewall() {
+        rules = new ArrayList<>();
+    }
+
+    public void addRule(String sourceIP, String destinationIP, int sourcePort, int destinationPort, String action) {
+        Rule rule = new Rule(sourceIP, destinationIP, sourcePort, destinationPort, action);
+        rules.add(rule);
+    }
+
+    public String filter(String sourceIP, String destinationIP, int sourcePort, int destinationPort) {
+        for (Rule rule : rules) {
+            if (rule.matches(sourceIP, destinationIP, sourcePort, destinationPort)) {
+                return rule.getAction();
+            }
+        }
+        return "DENY"; // Default action if no matching rule is found
+    }
+
+    public static void main(String[] args) {
+        Firewall firewall = new Firewall();
+
+        // Add rules to allow or deny traffic
+        firewall.addRule("192.168.1.2", "8.8.8.8", 12345, 53, "ALLOW");
+        firewall.addRule("10.0.0.1", "192.168.1.2", 80, 8080, "DENY");
+
+        // Simulate incoming and outgoing traffic
+        String sourceIP = "192.168.1.2";
+        String destinationIP = "8.8.8.8";
+        int sourcePort = 12345;
+        int destinationPort = 53;
+
+        String action = firewall.filter(sourceIP, destinationIP, sourcePort, destinationPort);
+        System.out.println("Action for traffic: " + action);
+    }
+}
