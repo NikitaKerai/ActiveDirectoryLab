@@ -8,7 +8,7 @@ The Firewall Application monitors incoming and outgoing network traffic based on
 
 - Java
   
-<h2>Environments Used </h2>
+<h2>Environment Used </h2>
 
 - Visual Studio Code 
 
