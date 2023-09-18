@@ -4,15 +4,13 @@
 The Firewall Application monitors incoming and outgoing network traffic based on predefined rules and policies.
 <br />
 
-
 <h2>Languages and Utilities Used</h2>
 
 - Java
-- 
-
+  
 <h2>Environments Used </h2>
 
-- Windows 10 (21H2)
+- Visual Studio Code 
 
 <h2>Program walk-through:</h2>
 
