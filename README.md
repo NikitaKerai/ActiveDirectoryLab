@@ -15,8 +15,8 @@ The Firewall Application monitors incoming and outgoing network traffic based on
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Class Rule: <br/>
+<img src="https://imgur.com/6PA3X9A" height="80%" width="80%" alt=""/>
 <br />
 <br />
 Select the disk:  <br/>
